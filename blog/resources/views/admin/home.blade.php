@@ -8,7 +8,7 @@
     <h1>Welcome home!</h1>
 
     <a href="{{route('admin.create')}}">Create User</a>
-
+    <a href="{{route('logout.index')}}">logout</a>
     <h2>user list</h2>
 
     <table border="1">

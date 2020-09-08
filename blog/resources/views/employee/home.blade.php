@@ -30,7 +30,8 @@
             <td>{{$user[$i]->job_location}}</td>
             <td>{{$user[$i]->salary}}</td>
             <td>
-           
+                <a href="{{route('employee.edit', [$user[$i]->job_id])}}">Edit</a> |
+                <a href="{{route('employee.delete', [$user[$i]->job_id])}}"onclick=" return confirm('are you sure to delete')">Delete</a>
             </td>
         </tr>
     @endfor
