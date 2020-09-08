@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','LoginController@index')->name('login.index');
 Route::post('/',['uses'=>'LoginController@varify'] );
+
+Route::get('/admin/home', 'HomeController@index')->name('admin.home');
+Route::get('/admin/create', 'HomeController@create')->name('admin.create');
+Route::post('/admin/create', 'HomeController@store');
