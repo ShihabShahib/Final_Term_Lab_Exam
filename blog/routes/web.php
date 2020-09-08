@@ -25,3 +25,5 @@ Route::get('/admin/edit/{id}', 'HomeController@edit')->name('admin.edit');
 Route::post('/admin/edit/{id}', 'HomeController@update');
 Route::get('/admin/delete/{id}', 'HomeController@delete')->name('admin.delete');
 Route::get('/employee/home', 'EmpController@index')->name('employee.home');
+Route::get('/employee/create', 'EmpController@create')->name('employee.create');
+Route::post('/employee/create', 'EmpController@store');

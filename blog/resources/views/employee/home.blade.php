@@ -6,7 +6,8 @@
 <body>
 
     <h1>Welcome home!</h1>
-
+    <a href="{{route('employee.create')}}">Create Job</a><br>
+    <a href="{{route('logout.index')}}">logout</a>
 
 
     <h2>Job list</h2>
