@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/','LoginController@index')->name('login.index');
+Route::post('/',['uses'=>'LoginController@varify'] );
