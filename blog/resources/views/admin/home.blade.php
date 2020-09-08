@@ -27,8 +27,8 @@
             <td>{{$user[$i]->companyname}}</td>
             <td>{{$user[$i]->contact}}</td>
             <td>
-                <a href="">Edit</a> |
-                <a href=" ">Delete</a>
+            <a href="{{route('admin.edit', [$user[$i]->employeeid])}}">Edit</a>
+                <a href="{{route('admin.delete', [$user[$i]->employeeid])}}"onclick=" return confirm('are you sure to delete')">Delete</a>
             </td>
         </tr>
     @endfor

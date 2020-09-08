@@ -35,4 +35,34 @@ public function store(Request $request){
 
         return redirect()->route('admin.home');
     }
+    function edit($id){
+
+        $user = DB::table('employees')
+              ->where('employeeid', $id)->first();
+        return view('admin.edit')->with('user', $user);
+
+    }
+    function update($id, Request $request){
+
+        $request->validate([
+            'employeename'=> 'required',
+            'companyname' => 'required',
+            'contact'     => 'required'
+        ]);
+
+        DB::table('employees')->where('employeeid', $id)
+              ->update(['employeename'      => $request->employeename,
+                        'companyname'     => $request->companyname,
+                        'contact'        => $request->contact]);
+
+        return redirect()->route('admin.home');
+
+    }
+    function delete($id){
+        
+        DB::table('employees')->where('employeeid', $id)->delete();
+        DB::table('users')->where('id', $id)->delete();
+        return redirect()->route('admin.home');
+
+    }
 }
