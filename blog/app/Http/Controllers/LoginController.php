@@ -24,6 +24,9 @@ class LoginController extends Controller
             if($data[0]->type == "Admin"){
             return redirect()->route('admin.home');
             }
+            if($data[0]->type == "employee"){
+                return redirect()->route('employee.home');
+                }
         }else{
             $request->session()->flash('msg', 'invalid username/password');
             return redirect()->route('login.index');
